@@ -1,0 +1,15 @@
+import React from "react";
+import GlobalStyle from "./styles/global";
+import AppRoutes from "./routes";
+import { AuthProvider } from "./contexts/auth";
+
+const App = () => {
+  return (
+    <AuthProvider>
+      <AppRoutes /> 
+      <GlobalStyle />
+    </AuthProvider>
+  );
+};
+
+export default App;
