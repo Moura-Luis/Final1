@@ -10,6 +10,8 @@ import LoginPage from "../pages/LoginPage";
 import HomePage from "../pages/HomePage";
 import CriarConta from "../pages/CriarConta";
 import useAuth from "../hooks/userAuth";
+import LaboratoriosPage from "../pages/ListaLaboratorios-ADM";
+import HomePageADM from "../pages/HomePage-ADM";
 
 const Private = ( {Item}) => {
     const { signed } = useAuth;
@@ -29,11 +31,21 @@ const AppRoutes = () => {
                      <Route
                         exact path="/CriarConta" 
                         element={<CriarConta/>} />
+                     <Route
+                        exact path="/Home" 
+                        element={<HomePage/>} />
+                        <Route
+                        exact path="/HomeADM" 
+                        element={<HomePageADM/>} />
+                        <Route
+                        exact path="/LaboratoriosPage" 
+                        element={<LaboratoriosPage/>} />
                     <Route 
                         exact path="/"
                         element={
                             <Private>
                                 <HomePage/>
+                                <HomePageADM/>
                             </Private>} />
                     //para fazer mais rotas privadas é só duplicar esta linha acima//
                 </Routes>

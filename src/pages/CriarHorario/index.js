@@ -57,7 +57,7 @@ const CriarHorario = () => {
           onChange={(e) => [setHoraFinal(e.target.value), setError("")]}
         />
         <C.labelError>{error}</C.labelError>
-        <Button Text="Cadastrar-se !" onClick={handleCriarConta} />
+        <Button Text="Registrar Horario!" onClick={handleCriarHorario} />
             <C.labelCriarHorario>
                 Já existe um horario assim ?
                 <C.Strong>

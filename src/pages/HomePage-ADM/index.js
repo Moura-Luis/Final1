@@ -2,20 +2,22 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../../componentes/Button";
 import useAuth from "../../hooks/userAuth";
+import ListaLaboratorios from "../ListaLaboratorios-ADM";
 import * as C from "./styles";
 
-const HomePage = () => {  
+const HomePageADM = () => {  
     const { signout } = useAuth();
     const navigate = useNavigate();
+    const ListaLaboratorios = ListaLaboratorios();
 
     return (
         <C.Container>
           <C.Title>Home</C.Title>
-          <Button Text="Nova Reserva" onClick={() => [signout(), navigate("/")]}>
-            Nova Reserva
+          <Button Text="Laboratorios" onClick={() => [ListaLaboratorios(), navigate("/ListaLaboratorios")]}>
+            Laboratorios
           </Button>
-          <Button Text="Minhas Reservas" onClick={() => [signout(), navigate("/")]}>
-            Minhas Reservas
+          <Button Text="Usuarios" onClick={() => [signout(), navigate("/")]}>
+            Usuarios
           </Button>
           <Button Text="Sair" onClick={() => [signout(), navigate("/")]}>
             Sair
@@ -24,4 +26,4 @@ const HomePage = () => {
       );
     };
 
-export default HomePage;
+export default HomePageADM;
